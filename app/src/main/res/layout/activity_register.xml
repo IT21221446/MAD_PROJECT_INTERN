@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Register"
+    android:gravity="center"
+    android:background="#E1D5C9">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:paddingBottom="10dp"
+        app:srcCompat="@drawable/logo"
+       />
+
+    <TextView
+        android:id="@+id/Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:height="40dp"
+        android:gravity="center"
+        android:textSize="34sp"
+        android:textColor="@color/black"
+        android:text="@string/register">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="@string/enter_your_name"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black"
+       />
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="@string/enter_your_email"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black"/>
+
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:hint="@string/create_a_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black" />
+
+
+    <EditText
+        android:id="@+id/RePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:hint="@string/re_enter_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="@color/black" />
+
+    <Button
+        android:id="@+id/RegButton"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_margin="15dp"
+        android:backgroundTint="#232524"
+        android:text="@string/create_account" />
+
+    <Button
+        android:id="@+id/ResetButton"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_margin="15dp"
+        android:backgroundTint="#232524"
+        android:text="@string/reset" />
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MAD_PROJECT_INTERN</string>
+    <string name="register">REGISTER</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="create_a_password">Create a password</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="create_account">Create Account</string>
+    <string name="reset">Reset</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome_to">WELCOME TO</string>
+    <string name="loginA">Login</string>
+    <string name="signUp">Sign Up</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
