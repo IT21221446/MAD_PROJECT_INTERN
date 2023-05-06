@@ -16,4 +16,22 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_activity_news_letter">NewsLetter</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="textview">TextView</string>
+    <string name="newsletter">Newsletter</string>
+    <string name="subscribe_to_our_newsletter_and_get_notified_about_new_job_listings">Subscribe to our newsletter and get notified about new job listings</string>
+    <string name="email">Email</string>
+    <string name="job_role">Job Role</string>
+    <string name="submit">Submit</string>
+    <string name="user_name_or_email">User Name or Email</string>
+    <string name="password">Password</string>
+    <string name="title_activity_wish_list">wishList</string>
 </resources>

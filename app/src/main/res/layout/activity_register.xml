@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context=".Register"
     android:gravity="center"
-    android:background="#E1D5C9">
+    >
 
     <ImageView
         android:id="@+id/imageView"

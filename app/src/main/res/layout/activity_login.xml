@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:backgroundTint="@color/Background"
     tools:context=".Login" >
 
     <ImageView
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:ems="10"
-        android:hint="User Name or Email"
+        android:hint="@string/user_name_or_email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:textColor="@color/black"
@@ -33,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColor="@color/black"
