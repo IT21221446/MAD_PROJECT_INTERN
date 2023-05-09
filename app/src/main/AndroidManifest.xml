@@ -14,17 +14,12 @@
         android:theme="@style/Theme.MAD_PROJECT_INTERN"
         tools:targetApi="31">
         <activity
-            android:name=".wishList"
-            android:exported="false"
-            android:label="@string/title_activity_wish_list" />
+            android:name=".Main2"
+            android:exported="false" />
         <activity
             android:name=".newsletter"
             android:exported="false" />
-        <activity
-            android:name=".NewsLetter"
-            android:exported="false"
-            android:label="@string/title_activity_news_letter"
-            android:theme="@style/Theme.MAD_PROJECT_INTERN.NoActionBar" />
+
         <activity
             android:name=".Home"
             android:exported="false"

@@ -43,8 +43,8 @@ private lateinit var firebaseAuth: FirebaseAuth
                 if (it.isSuccessful) {
                     Toast.makeText(this,"Okey",Toast.LENGTH_SHORT).show()
 
-                    // val intent = Intent(this, Home::class.java)
-                    //startActivity(intent)
+                     val intent = Intent(this, Main2::class.java)
+                    startActivity(intent)
                 }else{
                     Toast.makeText(this,it.exception.toString(),Toast.LENGTH_SHORT).show()
                 }
