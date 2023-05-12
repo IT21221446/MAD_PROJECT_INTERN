@@ -5,6 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.databinding.DataBindingUtil.setContentView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.mad_project_intern.Adapter.JobAdapter
+import com.example.mad_project_intern.Models.JobModel
+import com.example.mad_project_intern.databinding.FragmentSearchBinding
+import com.google.firebase.database.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,6 +24,12 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Search.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+private lateinit var jobRecyclerView:RecyclerView
+private lateinit var loadingData:TextView
+lateinit var binding:FragmentSearchBinding
+private lateinit var dbRef:DatabaseReference
+private lateinit var jobList:ArrayList<JobModel>
 class Search : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -33,6 +47,8 @@ class Search : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
@@ -55,5 +71,52 @@ class Search : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        jobRecyclerView=view.findViewById(R.id.job)
+        jobRecyclerView.layoutManager=LinearLayoutManager(this.requireContext())
+        jobRecyclerView.hasFixedSize()
+        loadingData=view.findViewById(R.id.loadingData)
+
+        jobList = arrayListOf<JobModel>()
+
+
+
+        getJobData()
+
+    }
+        private fun getJobData(){
+        jobRecyclerView.visibility=View.GONE
+        loadingData.visibility=View.VISIBLE
+        dbRef=FirebaseDatabase.getInstance().getReference("jobs")
+
+        dbRef.addValueEventListener(object :ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                jobList.clear()
+                if(snapshot.exists()){
+                    for (jobSnap in snapshot.children) {
+                        val jobData=jobSnap.getValue(JobModel::class.java)
+                        jobList.add(jobData!!)
+
+                    }
+
+                    val mAdapter=JobAdapter(jobList)
+                    jobRecyclerView.adapter=mAdapter
+                    jobRecyclerView.visibility=View.VISIBLE
+                    loadingData.visibility=View.GONE
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
     }
 }
