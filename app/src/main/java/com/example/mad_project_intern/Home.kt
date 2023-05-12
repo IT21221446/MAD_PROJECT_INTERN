@@ -1,10 +1,20 @@
 package com.example.mad_project_intern
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.mad_project_intern.Adapter.CompanyAdapter
+import com.example.mad_project_intern.Models.Company
+import com.example.mad_project_intern.Models.companyViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,6 +26,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Home.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+private lateinit var viewModel:companyViewModel
+private lateinit var dataList:List<Company>
+private lateinit var companyRecyclerView: RecyclerView
+private lateinit var adapter: CompanyAdapter
 class Home : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -55,5 +70,22 @@ class Home : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        companyRecyclerView=view.findViewById(R.id.recyclerView)
+        companyRecyclerView.layoutManager=LinearLayoutManager(context)
+        companyRecyclerView.setHasFixedSize(true)
+        dataList=ArrayList<Company>()
+        adapter=CompanyAdapter(requireContext())
+        companyRecyclerView.adapter= adapter
+
+        viewModel=ViewModelProvider(this).get(companyViewModel::class.java)
+
+        viewModel.allCompanies.observe(viewLifecycleOwner, Observer {
+            adapter.updateCompanyList(it)
+        })
+
     }
 }

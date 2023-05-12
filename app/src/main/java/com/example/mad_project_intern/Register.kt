@@ -3,10 +3,9 @@ package com.example.mad_project_intern
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.mad_project_intern.Models.UserModel
 import com.example.mad_project_intern.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference

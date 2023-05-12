@@ -41,6 +41,8 @@ private lateinit var firebaseAuth: FirebaseAuth
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
 
                 if (it.isSuccessful) {
+
+
                     Toast.makeText(this,"Okey",Toast.LENGTH_SHORT).show()
 
                      val intent = Intent(this, Main2::class.java)

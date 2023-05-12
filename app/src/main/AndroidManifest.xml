@@ -14,12 +14,17 @@
         android:theme="@style/Theme.MAD_PROJECT_INTERN"
         tools:targetApi="31">
         <activity
+            android:name=".item_company2"
+            android:exported="false" />
+        <activity
+            android:name=".CompanyDetails"
+            android:exported="false" />
+        <activity
             android:name=".Main2"
             android:exported="false" />
         <activity
             android:name=".newsletter"
             android:exported="false" />
-
         <activity
             android:name=".Home"
             android:exported="false"
